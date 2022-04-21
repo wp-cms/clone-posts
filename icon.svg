@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128"><defs><clipPath id="b"><path d="M0 0h128v128H0z"/></clipPath><clipPath id="c"><path d="M0 0h128v128H0z"/></clipPath><mask id="f"><g filter="url(#a)"><path style="fill:#000;fill-opacity:.6;stroke:none" d="M0 0h128v128H0z"/></g></mask><mask id="h"><g filter="url(#a)"><path style="fill:#000;fill-opacity:.301961;stroke:none" d="M0 0h128v128H0z"/></g></mask><g id="e" clip-path="url(#b)"><path style="stroke:none;fill-rule:nonzero;fill:#fff;fill-opacity:1" d="M84.602 80H76v-8.602c0-1.796.602-3.398 2-4.597L98.602 46c3.199-3.2 8.199-3.2 11.398 0 3.2 3.2 3.2 8.2 0 11.398L89.2 78c-1.2 1.398-2.802 2-4.598 2Zm0 0"/></g><g id="g" clip-path="url(#c)"><path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke:#fff;stroke-opacity:1;stroke-miterlimit:10" d="M13 13h31M13 20h31M13 27h27M13 34h23M13 41h23" transform="scale(2)"/></g><linearGradient id="d" gradientUnits="userSpaceOnUse" x1="11.992" y1="11.978" x2="52.248" y2="52.235" gradientTransform="scale(2)"><stop offset="0" style="stop-color:#4afab5;stop-opacity:1"/><stop offset="1" style="stop-color:#107a96;stop-opacity:1"/></linearGradient><filter id="a" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%"><feColorMatrix in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/></filter></defs><path style="stroke:none;fill-rule:nonzero;fill:url(#d)" d="M114.398 121c-33 4-66.597 4-100.796 0-3.403-.398-6.204-3.2-6.602-6.602C3 80.801 3 47.2 7 13.602c.398-3.403 3.2-6.204 6.602-6.602 33.597-4 67.398-4 101 0 3.398.398 6 3 6.597 6.398 4 33 4 66.602 0 101-.597 3.403-3.398 6.204-6.8 6.602Zm0 0"/><use xlink:href="#e" mask="url(#f)"/><path style="stroke:none;fill-rule:nonzero;fill:#fff;fill-opacity:1" d="M89.2 78c-1.2 1.2-2.802 2-4.598 2H76v-8.602c0-1.796.602-3.398 2-4.597l19.398-19.403C81.2 45 65.2 45.2 49 47.602c-1.8.199-3.2 1.597-3.398 3.398-2 16.2-2 32.8 0 50 .199 1.8 1.597 3.398 3.597 3.602 16.602 2 33.2 2 49.801 0 1.8-.204 3.2-1.602 3.602-3.403 1.597-12.398 2-24.8 1.199-37.398Zm0 0"/><use xlink:href="#g" mask="url(#h)"/></svg>
+<svg id="emoji" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g id="color">
+    <rect x="23.8246" y="9.2081" width="32.1283" height="47.7648" fill="#9B9B9A"/>
+    <rect x="19.9359" y="13.0968" width="32.1283" height="47.7648" fill="#FFFFFF"/>
+  </g>
+  <g id="hair"/>
+  <g id="skin"/>
+  <g id="skin-shadow"/>
+  <g id="line">
+    <polyline fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" points="52.06,56.9698 55.95,56.9698 55.95,9.2098 23.82,9.2098 23.82,13.0998"/>
+    <rect x="19.9359" y="13.0968" width="32.1283" height="47.7648" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <line x1="31.1709" x2="40.8291" y1="37.0208" y2="37.0208" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <line x1="36" x2="36" y1="41.8499" y2="32.1917" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>
