@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\ClonePosts;
+namespace plugin\clone_posts;
 
 /**
  * This will run during plugin activation

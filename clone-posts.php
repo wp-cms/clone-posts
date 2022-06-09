@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: Clone Posts
-Description: Allow user to clone post in the WP Admin Area.
-Version: 9
+Description: Allow user to clone posts in the Admin Area.
+Version: 1.0.0
 Text Domain: clone-posts
 Domain Path: /languages/
 */
 
-namespace Core\ClonePosts;
+namespace plugin\clone_posts;
 
 if(!defined('ABSPATH')) {
     die('You are not allowed to call this page directly.');
@@ -19,14 +19,14 @@ require plugin_dir_path( __FILE__ ) . 'includes/settings-page.php';
 require plugin_dir_path( __FILE__ ) . 'includes/post-editing-screen.php';
 
 // Admin hooks
-add_action( 'admin_init', 'Core\ClonePosts\register_settings' );
-add_action( 'admin_menu', 'Core\ClonePosts\admin_page' );
-add_action( 'admin_footer-edit.php', 'Core\ClonePosts\admin_footer' );
-add_action( 'load-edit.php', 'Core\ClonePosts\bulk_action' );
-add_action( 'admin_notices', 'Core\ClonePosts\admin_notices' );
-add_filter( 'post_row_actions', 'Core\ClonePosts\post_row_actions', 10, 2 );
-add_filter( 'page_row_actions', 'Core\ClonePosts\post_row_actions', 10, 2 );
-add_action( 'wp_loaded', 'Core\ClonePosts\wp_loaded' );
+add_action( 'admin_init', 'plugin\clone_posts\register_settings' );
+add_action( 'admin_menu', 'plugin\clone_posts\admin_page' );
+add_action( 'admin_footer-edit.php', 'plugin\clone_posts\admin_footer' );
+add_action( 'load-edit.php', 'plugin\clone_posts\bulk_action' );
+add_action( 'admin_notices', 'plugin\clone_posts\admin_notices' );
+add_filter( 'post_row_actions', 'plugin\clone_posts\post_row_actions', 10, 2 );
+add_filter( 'page_row_actions', 'plugin\clone_posts\post_row_actions', 10, 2 );
+add_action( 'wp_loaded', 'plugin\clone_posts\wp_loaded' );
 
 /**
  * Fires before admin_init, clears query args and redirects
@@ -67,7 +67,7 @@ function clone_single( $id ) {
     $p = get_post( $id );
     if ($p == null) return false;
 
-    $newpost = array(
+    $new_post = array(
         'post_name'				=> $p->post_name,
         'post_type'				=> $p->post_type,
         'post_parent'			=> $p->post_parent,
@@ -87,22 +87,22 @@ function clone_single( $id ) {
 
     $post_status = get_option('clone_posts_post_status');
     if ( $post_status !== 'draft' ) {
-        $newpost['post_status'] = $post_status;
+        $new_post['post_status'] = $post_status;
     }
 
     $date = get_option('clone_posts_post_date');
     if ( $date !== 'current' ) {
-        $newpost['post_date'] = $p->post_date;
-        $newpost['post_date_gmt'] = $p->post_date_gmt;
+        $new_post['post_date'] = $p->post_date;
+        $new_post['post_date_gmt'] = $p->post_date_gmt;
     }
 
-    $newid = wp_insert_post($newpost);
+    $new_id = wp_insert_post($new_post);
     $format = get_post_format($id);
-    set_post_format($newid, $format);
+    set_post_format($new_id, $format);
 
     $meta = get_post_meta($id);
     foreach($meta as $key=>$val) {
-        update_post_meta( $newid, $key, $val[0] );
+        update_post_meta( $new_id, $key, $val[0] );
     }
 
     return true;
