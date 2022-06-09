@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\ClonePosts;
+namespace plugin\clone_posts;
 
 // Die if WP_UNINSTALL_PLUGIN isn't defined
 if(!defined('WP_UNINSTALL_PLUGIN')) {

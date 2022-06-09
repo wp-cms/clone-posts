@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\ClonePosts;
+namespace plugin\clone_posts;
 
 /**
  * Register the admin settings page
@@ -8,11 +8,11 @@ namespace Core\ClonePosts;
 function admin_page() {
 
     add_options_page(
-        'Clone Posts Settings',
-        'Clone Posts',
+        __('Clone Posts Settings', 'clone-posts'),
+        __('Clone Posts', 'clone-posts'),
         'manage_options',
         'clone-posts-options',
-        'Core\ClonePosts\render_settings_page',
+        'plugin\clone_posts\render_settings_page',
         null
     );
 
@@ -59,7 +59,7 @@ function register_settings() {
     add_settings_field(
         'clone_posts_post_status',
         'Post Status',
-        'Core\ClonePosts\option_post_status',
+        'plugin\clone_posts\option_post_status',
         'clone-posts-options',
         'clone_posts_settings_section',
         array(
@@ -77,7 +77,7 @@ function register_settings() {
     add_settings_field(
         'clone_posts_post_date',
         'Post Date',
-        'Core\ClonePosts\option_post_date',
+        'plugin\clone_posts\option_post_date',
         'clone-posts-options',
         'clone_posts_settings_section',
         array(
@@ -89,13 +89,13 @@ function register_settings() {
     register_setting(
         'clone_post_settings',
         'clone_posts_post_type',
-        'Core\ClonePosts\sanitize_array'
+        'plugin\clone_posts\sanitize_array'
     );
 
     add_settings_field(
         'clone_posts_post_type',
         'Post Type',
-        'Core\ClonePosts\option_post_type',
+        'plugin\clone_posts\option_post_type',
         'clone-posts-options',
         'clone_posts_settings_section',
         array(
@@ -116,7 +116,7 @@ function option_post_status() {
     <?php _e('Select a default status for the cloned post:', 'clone-posts'); ?><br><br>
     <select name="clone_posts_post_status" id="clone_posts_post_status">
         <option value="draft" <?php selected($option, 'draft'); ?>><?php _e('Draft', 'clone-posts'); ?></option>
-        <option value="publish" <?php selected($option, 'publish'); ?>><?php _e('Publish', 'clone-posts'); ?></option>
+        <option value="publish" <?php selected($option, 'publish'); ?>><?php _e('Public', 'clone-posts'); ?></option>
         <option value="private" <?php selected($option, 'private'); ?>><?php _e('Private', 'clone-posts'); ?></option>
         <option value="pending" <?php selected($option, 'pending'); ?>><?php _e('Pending', 'clone-posts'); ?></option>
     </select>

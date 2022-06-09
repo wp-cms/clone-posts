@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\ClonePosts;
+namespace plugin\clone_posts;
 
 
 /**
@@ -110,7 +110,7 @@ function admin_notices() {
             $cloned = (int) $_GET['cloned'];
         }
         if ($cloned) {
-            $message = sprintf( _n( 'Post cloned.', '%s posts cloned.', $cloned ), number_format_i18n( $cloned ) );
+            $message = sprintf( _n( 'Post cloned.', '%s posts cloned.', $cloned, 'clone-posts' ), number_format_i18n( $cloned ) );
             echo "<div class=\"updated\"><p>{$message}</p></div>";
         }
     }
