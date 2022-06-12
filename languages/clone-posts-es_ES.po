@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Clone Posts\n"
-"POT-Creation-Date: 2022-06-09 20:15+0200\n"
-"PO-Revision-Date: 2022-06-09 20:15+0200\n"
+"POT-Creation-Date: 2022-06-12 14:51+0200\n"
+"PO-Revision-Date: 2022-06-12 14:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -21,29 +21,25 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: clone-posts.php:44 includes/post-editing-screen.php:74
-msgid "You are not allowed to clone this post."
-msgstr "No se le permite clonar esta publicación."
+#: includes/main-functions.php:23
+msgid "Post cloned."
+msgstr "Post clonado."
 
-#: clone-posts.php:48 includes/post-editing-screen.php:78
-msgid "Error cloning post."
-msgstr "Error al clonar la publicación"
-
-#: clone-posts.php:78
-msgid "- clone"
-msgstr "- clon"
-
-#: includes/post-editing-screen.php:22 includes/post-editing-screen.php:23
-#: includes/post-editing-screen.php:144
+#: includes/main-functions.php:54
 msgid "Clone"
 msgstr "Clonar"
 
-#: includes/post-editing-screen.php:113
-#, php-format
-msgid "Post cloned."
-msgid_plural "%s posts cloned."
-msgstr[0] "Post clonado."
-msgstr[1] "%s publicaciones clonadas."
+#: includes/main-functions.php:80
+msgid "You are not allowed to clone this post."
+msgstr "No se le permite clonar esta publicación."
+
+#: includes/main-functions.php:85
+msgid "Error cloning post."
+msgstr "Error al clonar la publicación."
+
+#: includes/main-functions.php:137
+msgid "[Cloned]"
+msgstr "[Clonado]"
 
 #: includes/settings-page.php:11 includes/settings-page.php:28
 msgid "Clone Posts Settings"
@@ -92,11 +88,22 @@ msgstr ""
 "Seleccione los tipos de publicación que deben permitir la función de "
 "clonación:"
 
-#: includes/settings-page.php:166
+#: includes/settings-page.php:167
 msgid "There are no post types available."
 msgstr "No hay tipos de publicaciones disponibles."
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/wp-cms/clone-posts"
+msgstr "https://github.com/wp-cms/clone-posts"
 
 #. Description of the plugin/theme
 msgid "Allow user to clone posts in the Admin Area."
 msgstr ""
 "Permitir que el usuario clone publicaciones en el Área de administración."
+
+#. Author of the plugin/theme
+msgid "Álvaro Franz"
+msgstr "Álvaro Franz"
+
+#~ msgid "- clone"
+#~ msgstr "- clon"
