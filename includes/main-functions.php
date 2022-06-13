@@ -3,9 +3,10 @@
 namespace plugin\clone_posts;
 
 /**
- * Display an admin notice on the Posts page after cloning
+ * Display an admin notice after successful cloning
  */
 function admin_notices() {
+
 	global $pagenow;
 
 	// Return if we are not in the edit page
@@ -14,7 +15,7 @@ function admin_notices() {
 	}
 
 	// Return if nonce verification fails
-	if ( ! isset( $_GET['post_cloned_nonce'] ) || ! wp_verify_nonce( $_GET['post_cloned_nonce'], 'post_cloned' ) ) {
+	if ( ! isset( $_GET['post_cloned_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_GET['post_cloned_nonce'] ), 'post_cloned' ) ) {
 		return;
 	}
 
@@ -29,6 +30,7 @@ function admin_notices() {
  * Filters the array of row action links on the admin table.
  */
 function post_row_actions( $actions, $post ) {
+
 	global $post_type;
 
 	$options = maybe_unserialize( get_option( 'clone_posts_post_type' ) );
@@ -60,6 +62,7 @@ function post_row_actions( $actions, $post ) {
  * Fires before admin_init, executes the cloning if necessary, clears query args and redirects
  */
 function wp_loaded() {
+
 	global $post_type;
 
 	// Return if clone post action isn't set
@@ -67,8 +70,13 @@ function wp_loaded() {
 		return;
 	}
 
+	// Return if the ID of the post to clone isn't set
+	if ( ! isset( $_GET['post'] ) ) {
+		return;
+	}
+
 	// Return if nonce verification fails
-	if ( ! isset( $_GET['clone_post_nonce'] ) || ! wp_verify_nonce( $_GET['clone_post_nonce'], 'clone_post' ) ) {
+	if ( ! isset( $_GET['clone_post_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_GET['clone_post_nonce'] ), 'clone_post' ) ) {
 		return;
 	}
 
@@ -86,9 +94,9 @@ function wp_loaded() {
 	}
 
 	// Prepare the URL where we have to redirect the user
-	$sendback = remove_query_arg( array( 'cloned', 'untrashed', 'deleted', 'ids' ), $_GET['redirect'] );
-
-	if ( ! $sendback ) {
+	if ( isset( $_GET['redirect'] ) ) {
+		$sendback = remove_query_arg( array( 'cloned', 'untrashed', 'deleted', 'ids' ), esc_url_raw( $_GET['redirect'] ) );
+	} else {
 		$sendback = admin_url( 'edit.php?post_type=' . $post_type );
 	}
 
@@ -99,8 +107,6 @@ function wp_loaded() {
 			'action2',
 			'tags_input',
 			'post_author',
-			'comment_status',
-			'ping_status',
 			'_status',
 			'post',
 			'bulk_edit',
@@ -108,9 +114,11 @@ function wp_loaded() {
 		),
 		$sendback
 	);
+
 	$sendback = wp_nonce_url( $sendback, 'post_cloned', 'post_cloned_nonce' );
 	wp_safe_redirect( $sendback );
 	exit();
+
 }
 
 /**
@@ -133,7 +141,6 @@ function clone_post( $id ) {
 		'menu_order'            => $post_to_clone->menu_order,
 		'post_password'         => $post_to_clone->post_password,
 		'post_excerpt'          => $post_to_clone->post_excerpt,
-		'comment_status'        => $post_to_clone->comment_status,
 		'post_title'            => $post_to_clone->post_title . ' ' . __( '[Cloned]', 'clone-posts' ),
 		'post_content'          => $post_to_clone->post_content,
 		'post_author'           => $post_to_clone->post_author,
@@ -168,4 +175,5 @@ function clone_post( $id ) {
 	}
 
 	return true;
+
 }

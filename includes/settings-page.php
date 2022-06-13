@@ -157,7 +157,7 @@ function option_post_type() {
 				?>
                 <div>
                     <input type="checkbox" name="clone_posts_post_type[]" value="<?php echo esc_attr( $post_type->name ); ?>"
-                           id="post_type_<?php esc_attr_e( $post_type->name ); ?>" <?php checked( in_array( $post_type->name, $options ), 1 ); ?>>
+                           id="post_type_<?php esc_attr( $post_type->name ); ?>" <?php checked( in_array( $post_type->name, $options ), 1 ); ?>>
                     <label for="post_type_<?php echo esc_attr( $post_type->name ); ?>"><?php echo esc_html( $post_type->labels->name ); ?></label>
                 </div>
 				<?php

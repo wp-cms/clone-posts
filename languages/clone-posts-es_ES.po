@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Clone Posts\n"
-"POT-Creation-Date: 2022-06-12 14:51+0200\n"
-"PO-Revision-Date: 2022-06-12 14:51+0200\n"
+"POT-Creation-Date: 2022-06-13 14:56+0200\n"
+"PO-Revision-Date: 2022-06-13 14:57+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -21,34 +21,34 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/main-functions.php:23
+#: includes/main-functions.php:24
 msgid "Post cloned."
 msgstr "Post clonado."
 
-#: includes/main-functions.php:54
+#: includes/main-functions.php:56
 msgid "Clone"
 msgstr "Clonar"
 
-#: includes/main-functions.php:80
+#: includes/main-functions.php:88
 msgid "You are not allowed to clone this post."
 msgstr "No se le permite clonar esta publicación."
 
-#: includes/main-functions.php:85
+#: includes/main-functions.php:93
 msgid "Error cloning post."
 msgstr "Error al clonar la publicación."
 
-#: includes/main-functions.php:137
+#: includes/main-functions.php:144
 msgid "[Cloned]"
 msgstr "[Clonado]"
 
 #: includes/settings-page.php:11 includes/settings-page.php:28
 msgid "Clone Posts Settings"
-msgstr "Configuración de Clonar publicaciones"
+msgstr "Configuración de clonación de Posts"
 
 #. Plugin Name of the plugin/theme
 #: includes/settings-page.php:12
 msgid "Clone Posts"
-msgstr "Clonar publicaciones"
+msgstr "Clonar Posts"
 
 #: includes/settings-page.php:116
 msgid "Select a default status for the cloned post:"
