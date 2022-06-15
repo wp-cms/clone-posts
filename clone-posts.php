@@ -2,7 +2,7 @@
 /*
 Plugin Name:    Clone Posts
 Description:    Allow user to clone posts in the Admin Area.
-Version:        2.0.2
+Version:        2.0.3
 Author:         Álvaro Franz
 Domain Path:    /languages/
 Plugin URI:     https://github.com/wp-cms/clone-posts
