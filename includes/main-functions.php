@@ -95,7 +95,7 @@ function wp_loaded() {
 
 	// Prepare the URL where we have to redirect the user
 	if ( isset( $_GET['redirect'] ) ) {
-		$sendback = esc_url( remove_query_arg( array( 'cloned', 'untrashed', 'deleted', 'ids' ), esc_url_raw( $_GET['redirect'] ) ) );
+		$sendback = esc_url( remove_query_arg( array( 'cloned', 'untrashed', 'deleted', 'ids' ), esc_url_raw( wp_unslash( $_GET['redirect'] ) ) ) );
 	} else {
 		$sendback = admin_url( 'edit.php?post_type=' . $post_type );
 	}
